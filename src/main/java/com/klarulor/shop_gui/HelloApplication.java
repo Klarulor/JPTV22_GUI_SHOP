@@ -1,5 +1,7 @@
 package com.klarulor.shop_gui;
 
+import com.klarulor.shop_gui.Features.Enums;
+import com.klarulor.shop_gui.Features.Enums.SceneLayerType;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,11 +12,9 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("GUI-SHOP!");
-        stage.setScene(scene);
-        stage.show();
+        SceneManager.init(stage);
+        SceneManager.load(SceneLayerType.LoginLayer);
     }
 
     public static void main(String[] args) {
